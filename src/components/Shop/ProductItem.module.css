@@ -1,0 +1,39 @@
+.item {
+    margin: .5rem 0;
+    font-size: 1.25rem;
+    color: #343F56;
+}
+
+.item header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.price {
+    border-radius: 30px;
+    padding: 0.15rem 1.5rem;
+    background-color: #FB9300;
+    font-size: 1.5rem;
+}
+
+.item p {
+    text-transform: none;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions button {
+    background: transparent;
+    color: #343F56;
+    border-color: #343F56;
+}
+
+.actions button:hover,
+.actions button:active {
+    background-color: #FB9300;
+    border-color: #FB9300;
+}
