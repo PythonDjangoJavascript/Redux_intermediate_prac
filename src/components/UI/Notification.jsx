@@ -1,7 +1,7 @@
 import classes from "./Notification.module.css"
 
 
-const Nofication = (props) => {
+const Notification = (props) => {
     let statusStyleClass = ''
 
     if (props.status === 'error') {
