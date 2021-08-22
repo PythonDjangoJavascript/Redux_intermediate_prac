@@ -3,7 +3,8 @@ import Cart from "./components/Cart/Cart";
 import Products from "./components/Shop/Products";
 import Notification from "./components/UI/Notification"
 
-import { postCardData } from "./store/cart-slice";
+import { postCartData } from "./store/cart-actions";
+import { fetchCartData } from "./store/cart-actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
@@ -18,6 +19,11 @@ function App() {
 
   const dispatch = useDispatch()
 
+  // useEffect to fetch cart data for the first time
+  useEffect(() => {
+    dispatch(fetchCartData())
+  }, [dispatch]) // it will runn only first time as dispatch doesn't change
+
   useEffect(() => {
 
     // block running the async fucntion to run for the first time
@@ -26,7 +32,7 @@ function App() {
       return
     }
 
-    dispatch(postCardData(cart))
+    dispatch(postCartData(cart))
     // creating seperate fucnc as we shouldn't use async fucnction
     // for useEffect fucnction
     // const sendUpdatedCart = async () => {
