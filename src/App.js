@@ -32,7 +32,12 @@ function App() {
       return
     }
 
-    dispatch(postCartData(cart))
+    if (cart.changed) {
+      dispatch(postCartData({
+        items: cart.items,
+        totalQuantity: cart.totalQuantity
+      }))
+    }
     // creating seperate fucnc as we shouldn't use async fucnction
     // for useEffect fucnction
     // const sendUpdatedCart = async () => {
